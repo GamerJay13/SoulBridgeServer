@@ -1,0 +1,47 @@
+body { font-family: system-ui,-apple-system,"Segoe UI",sans-serif; }
+
+.chat-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#444;
+  color:#fff;
+}
+
+.message {
+  margin-bottom: 1rem;
+  display:flex;gap:.75rem;
+}
+
+.message.user-message   { flex-direction: row-reverse; }
+.message.user-message .bubble { background: var(--bs-primary); color:white; }
+.message.ai-message   .chat-avatar { background:#159; }
+
+.bubble {
+  max-width: 80%;
+  padding: .65rem 1rem;
+  border-radius: 1rem;
+  background: #2d2d2d;
+  border:1px solid #444;
+  position:relative;
+}
+.timestamp {
+  font-size: .75rem;
+  color: var(--bs-secondary-color);
+  text-align:right;
+  margin-top:.15rem;
+}
+
+/* typing dots */
+.message-typing .dot {
+  display:inline-block;width:6px;height:6px;margin:0 2px;
+  border-radius:50%;background:#999;opacity:.3;
+  animation: blink 1.2s infinite ease-in-out;
+}
+.message-typing .dot:nth-child(2){animation-delay:.2s}
+.message-typing .dot:nth-child(3){animation-delay:.4s}
+@keyframes blink {0%,80%,100%{opacity:.3;}40%{opacity:1;}}
+
+/* simple dark/light toggle */
+:root[data-bs-theme="light"] .bubble { background:#f1f1f1;color:#111;border-color:#ccc;}
+:root[data-bs-theme="light"] .chat-avatar{background:#007bff}

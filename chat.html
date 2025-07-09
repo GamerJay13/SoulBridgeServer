@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulBridgeAI</title>
+
+    <!-- Bootstrap dark (Replit CDN) -->
+    <link rel="stylesheet"
+          href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}"/>
+  </head>
+
+  <body class="d-flex flex-column vh-100">
+
+    <!-- Header -->
+    <header class="border-bottom p-3 d-flex align-items-center justify-content-between">
+      <h1 class="h5 mb-0 text-info">
+        <i class="fas fa-heart me-1"></i>SoulBridgeAI
+      </h1>
+
+      <div class="d-flex gap-2">
+        <button id="themeBtn" class="btn btn-outline-light btn-sm" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="clearBtn" class="btn btn-outline-secondary btn-sm" title="Clear chat">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Messages -->
+    <main class="flex-grow-1 overflow-auto">
+      <div class="container py-4">
+        <div id="chat-messages"></div>
+      </div>
+    </main>
+
+    <!-- Input -->
+    <footer class="border-top p-3">
+      <form id="chat-form" class="input-group" autocomplete="off">
+        <button id="micBtn" class="btn btn-outline-info" type="button"
+                title="Voice input">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <input id="messageInput" type="text"
+               class="form-control" placeholder="Share your feelings…"/>
+        <button id="sendBtn" class="btn btn-primary" type="submit"
+                title="Send">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
