@@ -1,5 +1,4 @@
-fastapi
-uvicorn
+Flask
+gunicorn
 openai
-python-multipart
-jinja2
+python-dotenv
